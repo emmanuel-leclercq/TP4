@@ -4,14 +4,15 @@
 #include <chrono>
 #include <random>
 #include <deque>
+#include <list>
 
 using namespace std;
 
 int main()
 {
      unsigned N = 40000000;
-     deque<double> c1(N);
-     deque<double> c2(N);
+     vector<double> c1(N);
+     vector<double> c2(N);
      mt19937 G(time(nullptr));
      exponential_distribution<double> E(1.0);
 
