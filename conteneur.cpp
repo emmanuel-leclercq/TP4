@@ -17,7 +17,7 @@ int main()
         ++m[s];
     }
 
-    //sort en ordre lexicographique
+    //ordre lexicographique
     sort(m.begin(), m.end(), [](pair<string, unsigned> p1, pair<string, unsigned> p2)
          { return p1.first < p2.first; });
 
