@@ -20,7 +20,11 @@ public:
         n = 0;
         s = s_init;
     }; // redémarrage à l'état initial
-    void update(std::mt19937 &G){};
+    virtual void update(std::mt19937 &G)
+    {
+        n++;
+        s += U(G) ? 1 : -1;
+    };
     // passage de n à n+1 avec générateur G
 };
 
