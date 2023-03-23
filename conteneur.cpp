@@ -18,8 +18,8 @@ int main()
     }
 
     //ordre lexicographique
-    sort(m.begin(), m.end(), [](pair<string, unsigned> p1, pair<string, unsigned> p2)
-         { return p1.first < p2.first; });
+//    sort(m.begin(), m.end(), [](pair<string, unsigned> p1, pair<string, unsigned> p2)
+  //       { return p1.first < p2.first; });
 
     // remplissage d'un fichier avec les mots
 
