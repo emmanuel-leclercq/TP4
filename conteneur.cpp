@@ -4,8 +4,15 @@
 #include <fstream>
 #include <algorithm>
 #include <numeric>
+#include <vector>
 
 using namespace std;
+
+bool sortByVal(const pair<string, unsigned> &a, 
+               const pair<string, unsigned> &b) 
+{ 
+    return (a.first < b.first); 
+} 
 
 int main()
 {
@@ -18,13 +25,23 @@ int main()
     }
 
     //ordre lexicographique
-//    sort(m.begin(), m.end(), [](pair<string, unsigned> p1, pair<string, unsigned> p2)
-  //       { return p1.first < p2.first; });
+    vector<pair<string, int>> vec;
+    map<string, unsigned> :: iterator it2;
+    for (it2=m.begin(); it2!=m.end(); it2++) 
+    {
+    	vec.push_back(make_pair(it2->first, it2->second));
+    }
+    sort(vec.begin(),vec.end(),sortByVal);
+    map<string, unsigned> new_m;
+    for (auto p: vec){
+	new_m.insert({p.first,p.second});
+	}
+
 
     // remplissage d'un fichier avec les mots
 
     ofstream g("stats.dat");
-    for (auto p : m)
+    for (auto p : new_m)
     {
         g << p.first << " " << p.second << endl;
     }
